@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(var(--bc)/0.2); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--bc)/0.35); }
+
+/* Smooth transitions */
+* { transition-property: background-color, border-color, color, box-shadow; transition-duration: 150ms; }
+
+/* Chat bubble tweaks */
+.chat-bubble { max-width: 75%; word-break: break-word; }
+
+/* Message input focus */
+.msg-input:focus { outline: none; box-shadow: 0 0 0 2px hsl(var(--p)/0.4); }
+
+/* Fade-in animation */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeSlideUp 0.25s ease both; }
+
+/* Pulse dot */
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+.pulse-dot { animation: pulseDot 1.8s ease-in-out infinite; }
