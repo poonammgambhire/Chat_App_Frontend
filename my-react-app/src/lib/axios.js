@@ -1,8 +1,7 @@
 import axios from "axios"
 
 const axiosInstance = axios.create({
-  // Use relative URL — Vite proxy forwards /api/* to backend on port 5000
-  baseURL: "/",
+  baseURL: import.meta.env.VITE_API_URL,
   withCredentials: true,
 })
 
